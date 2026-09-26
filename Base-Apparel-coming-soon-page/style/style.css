@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+/* font-family: 'Josefin Sans', sans-serif; */
+
+:root {
+--desaturated-red: hsl(0, 36%, 70%);
+--soft-red: hsl(0, 93%, 68%);
+--Dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero-container {
+    display: flex;
+}
+
+.hero-desktop {
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-mobile {
+    display: none;
+    width: 100%;
+}
+
+.content-wrapper {
+    background: url(/images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 5em 2em 0 10em;
+}
+
+.desktop-logo {
+    display: block;
+}
+
+.logo-container {
+    display: none;
+}
+
+.title {
+    margin: 2.5em 0 0 0;
+    font-size: 3em;
+    font-weight:300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--desaturated-red);
+    line-height: 1.2em;
+}
+
+.coming-soon {
+    font-size: 3em;
+    color: var(--Dark-grayish-red);
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    width: 50%;
+    line-height: 1.2em;
+}
+
+.description {
+    font-size: 1.2em;
+    color: var(--desaturated-red);
+    line-height: 1.5em;
+    margin-bottom: 2em;
+    width: 50%;
+    font-weight: 400;
+}
+
+form {
+    width: 100%;
+    position: relative;
+}
+
+.input-container {
+    width: 65%;
+    min-width: 400px;
+}
+
+#email {
+    border: 1px solid var(--desaturated-red);
+    border-radius:50px;
+    background: transparent;
+    padding: 0 2em;
+    margin-left: 0.2em;
+    height: 50px;
+    width: 70%;
+    outline: none;
+}
+
+.danger-button {
+    background: var(--soft-red);
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    top: 18px;
+    right: 63%;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.danger-text {
+    font-size: .7em;
+    color: var(--soft-red);
+    font-weight: 400;
+    padding: 0.8em 2rem;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.btn {
+    background: linear-gradient(135deg,hsl(0, 80%, 86%),hsl(0, 74%, 74%));
+    height: 55px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    width:90px;
+    transform: translate(-55%, 3px);
+    box-shadow: 0 10px 30px -5px var(--Dark-grayish-red);
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--desaturated-red);
+}
+
+.btn:active {
+    background: linear-gradient(135deg, hsl(0, 100%, 96%), hsl(0, 90%, 84%));
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (max-width: 1000px) {
+    .hero-desktop {
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: initial;
+        flex-direction: column;
+    }
+    .content-wrapper {
+        padding: 0;
+    }
+    .logo-container {
+        display: block;
+    }
+    .desktop-logo {
+        display: none;
+    }
+    .logo {
+        padding: 2em;
+    }
+    .title {
+        font-size:2.5rem;
+        margin: 1.5em 0 0 0;
+        text-align: center;
+        width: 100%;
+    }
+    .hero-desktop {
+        display: none;
+    }
+    .hero-mobile {
+        display: block;
+    }
+    .coming-soon {
+        width: 100%;
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0 1em;
+    }
+    
+    .description {
+        text-align: center;
+        font-size: 0.8rem;
+        width: 100%;
+        padding: 0 3.5em;
+    }
+
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .danger-button {
+        top: 13px;
+        right: 34%;
+    }
+
+    .danger-text {
+        text-align: center;
+    }
+
+    .btn {
+        position: absolute;
+        height:50px;
+        transform: translate(-55%);
+        right: 0;
+    }
+}
